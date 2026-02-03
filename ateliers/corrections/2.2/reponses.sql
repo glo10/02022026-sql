@@ -8,7 +8,7 @@ SELECT nom,
   prenom,
   fonction
 FROM employes
-WHERE report_to = 2;
+WHERE rend_compte = 2;
 --- 3. nom, prénom, fonction qui ne sont pas des représentants
 SELECT nom,
   prenom,
