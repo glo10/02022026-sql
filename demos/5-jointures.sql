@@ -9,7 +9,14 @@
 -- Si la table A a 10 colonnes et la table B 15 colonnes, on aura au total 25 colonnes
 -- PK = Primary key = clé primaire
 -- FK = Foreign Key = clé étrangère
--- 
 SELECT *
 FROM categories C, produits P
 WHERE C.CODE_CATEGORIE = P.CODE_CATEGORIE;
+
+-- Il d'usage et conseillé de préfixer les colonnes par l'alias de la table dédié mais pas obligatoire
+-- C'est obligatoire pour les colonnes qui portent les mêmes noms de part et d'autre comme c'est le cas généralement pour les colonnes de jointure PK d'un côté et FK de l'autre qui porte le même nom
+-- Si vous avez d'autres conditions à mettre utiliser l'opérateur AND après
+--  la condition sur les colonnes de jointures
+SELECT C.NOM_CATEGORIE AS categorie, C.DESCRIPTION, P.NOM_PRODUIT AS nom, P.quantite AS packaging
+FROM categories C, produits P
+WHERE C.CODE_CATEGORIE = P.CODE_CATEGORIE AND P.QUANTITE LIKE '%bouteille%';
