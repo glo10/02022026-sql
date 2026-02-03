@@ -1,5 +1,9 @@
 # SQL Fondamentaux
 
+## Validation 1/2 journée
+
+- [Google Forms](https://docs.google.com/forms/d/1wJ1zYvtRo2sP2xX28Kp97wQ-1cjBxHxy8Y4cUdboXS8/preview)
+
 ## Ressources
 
 - [Schema de la base de données pour les ateliers](./ateliers/schema.pdf)
@@ -38,6 +42,12 @@
 - [MariaDB](https://mariadb.com/docs)
 - [SQLite](https://www.sqlite.org/docs.html)
 
+---
+
+## Base de données public
+
+- [Gouvernement français](https://www.data.gouv.fr/)
+- [International](https://www.kaggle.com/datasets)
 ---
 
 ## Installations selon le cadre de travail
