@@ -5,7 +5,7 @@ SELECT employes.NOM,
   employes.FONCTION
 FROM employes
 WHERE employes.SALAIRE >= 2500
-AND employes.SALAIRE <= 3500;
+  AND employes.SALAIRE <= 3500;
 -- 2. Affichez le nom du produit, le nom du fournisseur, le nom de la catégorie et 
 -- les quantités de produits qui ne sont pas d’une des catégories 1,3,5 et 7.
 SELECT P.NOM_PRODUIT,
@@ -16,8 +16,8 @@ FROM produits P,
   fournisseurs F,
   categories C
 WHERE C.CODE_CATEGORIE = P.CODE_CATEGORIE
-AND F.NO_FOURNISSEUR = P.NO_FOURNISSEUR
-AND C.CODE_CATEGORIE NOT IN ('1', '3', '5', '7');
+  AND F.NO_FOURNISSEUR = P.NO_FOURNISSEUR
+  AND C.CODE_CATEGORIE NOT IN ('1', '3', '5', '7');
 -- 3. Affichez le nom du produit, le nom du fournisseur, le nom de la catégorie et les quantités des produits qui ont
 -- un numéro de fournisseur entre 1 et 3
 -- ou un code catégorie entre 1 et 3
@@ -40,7 +40,8 @@ WHERE z.code_categorie = x.code_categorie
   AND (
     x.quantite LIKE '%bo_tes%'
     OR x.quantite LIKE '%carton%'
-  );
+  )
+  AND x.quantite NOT LIKE '%bou%';
 -- 4. Écrivez la requête qui permet d’afficher le nom des employés qui ont effectué au moins une vente pour un client parisien.
 SELECT e.NOM,
   cl.SOCIETE,
@@ -75,5 +76,6 @@ SELECT s.NOM AS nom_salarie,
   s.NO_EMPLOYE AS numero_employe_salarie,
   chef.NOM nom_du_chef,
   chef.PRENOM prenom_du_chef
-FROM employes s, employes chef
+FROM employes s,
+  employes chef
 WHERE chef.no_employe = s.REND_COMPTE;
