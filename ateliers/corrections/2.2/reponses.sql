@@ -14,7 +14,7 @@ SELECT nom,
   prenom,
   fonction
 FROM employes
-WHERE fonction NOT LIKE '%epr_%tant%';
+WHERE fonction NOT LIKE 'repr_tant%';
 --- 4. nom, prénom, fonction employé salaire < 3500
 SELECT prenom,
   prenom,
