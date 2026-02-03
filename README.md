@@ -23,14 +23,20 @@
 
 ## Documentations
 
+### Généralistes et compréhensibles
+
 - [SQL avec W3SCHOOLS](https://www.w3schools.com/sql/)
-- [PostGres avec W3SCHOOLS](https://www.w3schools.com/postgresql/index.php)
-- [PostGres officiel](https://www.postgresql.org/docs/current/intro-whatis.html)
-- [MySQL](https://www.w3schools.com/mysql/)
-- [MariaDB](https://mariadb.com/docs)
-- [SQLite](https://www.sqlite.org/docs.html)
+- [SQL avec SQL.sh](https://sql.sh/)
+
+### Spécifique à chaque SGBDR et plus technique
+
 - [SQL Server](https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver17)
 - [Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/23/index.html?utm_source=chatgpt.com)
+- [MySQL](https://www.w3schools.com/mysql/)
+- [PostGres avec W3SCHOOLS](https://www.w3schools.com/postgresql/index.php)
+- [PostGres officielle](https://www.postgresql.org/docs/current/intro-whatis.html)
+- [MariaDB](https://mariadb.com/docs)
+- [SQLite](https://www.sqlite.org/docs.html)
 
 ---
 
@@ -43,7 +49,7 @@
 
 ### Cadre 2 : travail en local sur sa machine en téléchargement les différents logiciels
 
-1. [Installez l'éditeur de code VSCode](https://code.visualstudio.com/download)
+1. [Installez l'éditeur de code VSCode](https://code.visualstudio.com/download) ou NotePad++
 2. Sur VSCode, ajoutez depuis l'onglet extension, les extensions suivantes :
 - [SQLite de alexcvz](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite) : pour visualiser des bases de données sqlite (fichiers binaires)
 - [MySQL de Database Client](https://database-client.com/) : interface graphique pour communiquer avec la quasi-totalité des bases de données les plus populaires
