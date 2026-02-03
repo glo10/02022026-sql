@@ -1,3 +1,5 @@
+# Les jointures
+
 ## Avec WHERE (moyennement courant)
 
 ```sql
@@ -30,7 +32,6 @@ FROM produits P
 JOIN categories C
 ON P.CODE_CATEGORIE = C.CODE_CATEGORIE
 WHERE P.QUANTITE LIKE '%carton%'
-AND C.CODE_CATEGORIE = 1
 -- La condition de jointure est dans le ON 
 ```
 
@@ -44,6 +45,5 @@ ON P.CODE_CATEGORIE = C.CODE_CATEGORIE
 JOIN fournisseurs F
 ON F.NO_FOURNISSEUR = P.NO_FOURNISSEUR
 WHERE P.QUANTITE LIKE '%carton%'
-AND C.CODE_CATEGORIE = 1
--- La condition de jointure est dans le ON 
+-- Plusieurs tables de jointures => succession de plusieurs JOIN ON avant WHERE
 ```
