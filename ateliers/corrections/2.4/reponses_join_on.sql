@@ -1,5 +1,4 @@
 -- 1. Affichez le nom, le prénom, la fonction et le salaire des employés qui ont un salaire compris entre 2500 et 3500.
--- Prefixe des colonnes par le nom de la table ici purement altruiste
 SELECT employes.NOM,
   employes.PRENOM,
   employes.FONCTION
@@ -12,12 +11,10 @@ SELECT P.NOM_PRODUIT,
   F.SOCIETE,
   C.NOM_CATEGORIE,
   P.QUANTITE
-FROM produits P,
-  fournisseurs F,
-  categories C
-WHERE C.CODE_CATEGORIE = P.CODE_CATEGORIE
-  AND F.NO_FOURNISSEUR = P.NO_FOURNISSEUR
-  AND C.CODE_CATEGORIE NOT IN ('1', '3', '5', '7');
+FROM produits P
+JOIN fournisseurs F ON F.NO_FOURNISSEUR = P.NO_FOURNISSEUR
+JOIN categories C ON C.CODE_CATEGORIE = P.CODE_CATEGORIE
+WHERE C.CODE_CATEGORIE NOT IN ('1', '3', '5', '7');
 -- 3. Affichez le nom du produit, le nom du fournisseur, le nom de la catégorie et les quantités des produits qui ont
 -- un numéro de fournisseur entre 1 et 3
 -- ou un code catégorie entre 1 et 3
@@ -28,21 +25,20 @@ SELECT x.NOM_PRODUIT,
   x.quantite,
   y.no_fournisseur,
   z.code_categorie
-FROM produits x,
-  fournisseurs y,
-  categories z
-WHERE z.code_categorie = x.code_categorie
-  AND y.no_fournisseur = x.no_fournisseur
-  AND (
-    y.no_fournisseur BETWEEN 1 AND 3
-    OR z.code_categorie BETWEEN 1 AND 3
+FROM produits x
+JOIN fournisseurs y
+ON y.no_fournisseur = x.no_fournisseur
+JOIN categories z
+ON z.code_categorie = x.code_categorie
+WHERE (
+    CAST(y.no_fournisseur AS SIGNED) <= 3
+    OR CAST(z.code_categorie AS SIGNED) <= 3
   )
   AND (
-    x.quantite LIKE '%bo_tes%'
+    x.quantite LIKE '%bo_te%'
     OR x.quantite LIKE '%carton%'
   )
   AND x.quantite NOT LIKE '%bou%';
-;
 -- 4. Écrivez la requête qui permet d’afficher le nom des employés qui ont effectué au moins une vente pour un client parisien.
 SELECT e.NOM,
   cl.SOCIETE,

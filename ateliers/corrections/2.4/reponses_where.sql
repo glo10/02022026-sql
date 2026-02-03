@@ -1,11 +1,9 @@
 -- 1. Affichez le nom, le prénom, la fonction et le salaire des employés qui ont un salaire compris entre 2500 et 3500.
--- Prefixe des colonnes par le nom de la table ici purement altruiste
 SELECT employes.NOM,
   employes.PRENOM,
   employes.FONCTION
 FROM employes
-WHERE employes.SALAIRE >= 2500
-  AND employes.SALAIRE <= 3500;
+WHERE employes.SALAIRE BETWEEN 2500 AND 3500;
 -- 2. Affichez le nom du produit, le nom du fournisseur, le nom de la catégorie et 
 -- les quantités de produits qui ne sont pas d’une des catégories 1,3,5 et 7.
 SELECT P.NOM_PRODUIT,
@@ -34,14 +32,15 @@ FROM produits x,
 WHERE z.code_categorie = x.code_categorie
   AND y.no_fournisseur = x.no_fournisseur
   AND (
-    CAST(y.no_fournisseur AS SIGNED) <= 3
-    OR CAST(z.code_categorie AS SIGNED) <= 3
+    y.no_fournisseur BETWEEN 1 AND 3
+    OR z.code_categorie BETWEEN 1 AND 3
   )
   AND (
     x.quantite LIKE '%bo_tes%'
     OR x.quantite LIKE '%carton%'
   )
   AND x.quantite NOT LIKE '%bou%';
+;
 -- 4. Écrivez la requête qui permet d’afficher le nom des employés qui ont effectué au moins une vente pour un client parisien.
 SELECT e.NOM,
   cl.SOCIETE,
