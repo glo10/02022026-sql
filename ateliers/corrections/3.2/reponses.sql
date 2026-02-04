@@ -9,7 +9,7 @@ SELECT NO_COMMANDE,
 FROM details_commandes
 GROUP BY NO_COMMANDE
 HAVING COUNT(REF_PRODUIT) > 5;
--- 3. Afficher la valeur des produits en stock et la valeur des produits commandés par
+-- 3. Affichez la valeur des produits en stock et la valeur des produits commandés par
 ---   fournisseur, pour les fournisseurs qui ont un numéro compris entre 3 et 6
 SELECT NO_FOURNISSEUR,
 	SUM(PRIX_UNITAIRE * UNITES_STOCK) AS "EN STOCK",
