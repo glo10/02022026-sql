@@ -49,3 +49,28 @@ LIMIT 10;
 SELECT MAX(SALAIRE), FONCTION, AVG(COMMISSION)
 FROM employes
 GROUP BY FONCTION;
+
+-- Moyenne des salaires par poste
+SELECT AVG(SALAIRE), FONCTION
+FROM employes
+GROUP BY FONCTION;
+
+-- Moyenne salaire et comission en excluant du calcul les valeurs nulles et 0
+-- Attention ici avec le second paramètre de la fonction CAST varie selon votre SGBDR
+SELECT ROUND(AVG(SALAIRE), 2) AS "moyenne salaire",
+	ROUND(AVG(COALESCE(COMMISSION, 0)), 2) AS "moyenne commission"
+FROM employes
+WHERE COMMISSION IS NOT NULL OR CAST(COMMISSION AS SIGNED) = 0;
+
+-- Moyenne des salaires par poste avec la moyenne > 5000
+SELECT AVG(SALAIRE), FONCTION
+FROM employes
+GROUP BY FONCTION
+HAVING AVG(SALAIRE) > 5000;
+
+-- Département dans l'île de France avec plus de 2M d'habitants
+SELECT REGION, DEPARTEMENT, COUNT(NB_POPULATION)
+FROM LOCALITE
+WHERE DEPARTEMENT IN (77,75,78,91,92,93,94,95)
+GROUP BY REGION, DEPARTEMENT
+HAVING COUNT(NB_POPULATION) > 2000000;
