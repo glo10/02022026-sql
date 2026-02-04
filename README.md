@@ -42,6 +42,11 @@
 - [MariaDB](https://mariadb.com/docs)
 - [SQLite](https://www.sqlite.org/docs.html)
 
+### Import des bases de données
+
+- [Avec MySQL depuis un export .sql](./demos/4-import-via-sql.md)
+- [Avec MySQL depuis un fichier CSV](https://www.mysqltutorial.org/mysql-basics/import-csv-file-mysql-table/)
+
 ---
 
 ## Base de données public
