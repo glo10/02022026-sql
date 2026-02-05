@@ -22,7 +22,7 @@
 - [Avec SQL Server depuis un fichier CSV et un logiciel graphique](https://learn.microsoft.com/fr-fr/sql/relational-databases/import-export/import-flat-file-wizard?view=sql-server-ver17)
 - [Vidéo import CSV depuis Kaggle avec SQL Server](https://www.youtube.com/watch?v=8HWXjh6eBjc)
 - [Vidéo import CSV Oracle depuis le logiciel SQL Developer](https://www.youtube.com/watch?v=GcB4_0Iz2Zw)
-- [Vidéo Excel connecté à une base de données à lire à partir de 3min45 avec SQL Server jusqu'à 9min48](https://www.youtube.com/watch?v=UzfYbWZr6ro), pour les autres SGBDR le processus est similaire/
+- [Vidéo Excel connecté à une base de données à lire à partir de 3min45 avec SQL Server jusqu'à 9min48](https://www.youtube.com/watch?v=UzfYbWZr6ro), pour les autres SGBDR le processus est similaire.
 - [Autre vidéo EXCEL SQL Server droit au but](https://www.youtube.com/watch?v=eMDpuiiHm8U)
 
 ---
