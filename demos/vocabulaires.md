@@ -19,14 +19,15 @@
 
 ## Clés
 
-- Clé primaire = identifiant = Primary Key
-- Clé étrangère = Foreign => On stocke dans une table donnée, une référence vers l'identifiant d'une autre table
+- Clé primaire = identifiantt = Primary Key (PK) => s'assure d'identifier un tuple de manière unique
+- Clé étrangère = Foreign Key (FK) => On stocke dans une table donnée, une référence vers l'identifiant d'une autre table
+- PK et FK garantissent la cohérence et l'intégrité des données
 
 ## 3 Types de relation entre les tables
 
-1. Un à Un
-2. Un à plusieurs
-3. Plusieurs à plusieurs
+1. Un à Un, exemple un employé est affilié à un seul département
+2. Un à plusieurs, exemple un produit appartient à plusieurs catégories
+3. Plusieurs à plusieurs, plusieurs fournisseurs proposent plusieurs produits
 - Donne lieu à une nouvelle table d'association
 - De base de cette table n'existe pas, elle nait de la relation plusieurs à plusieurs entre 2 tables
 - PK : couple de PK de chaque table
@@ -48,7 +49,7 @@
 
 ### BETWEEN
 
-- BETWEEN interval qui inclut les valeurs données par exemple salaire entre 5000 et 7500 €
+- BETWEEN intervalle qui inclut les valeurs données par exemple salaire entre 5000 et 7500 €
 ```sql
 SELECT *
 FROM employes
@@ -61,7 +62,7 @@ WHERE salaire NOT BETWEEN 5000 AND 7500
 
 ### IN
 
-- Au moins un est vrai la ligne retournera le résultat
+- Au moins un est vrai dans la comparaison
 ```sql
 SELECT *
 FROM clients
@@ -71,7 +72,7 @@ WHERE pays IN ("france", "allemagne", "espagne")
 
 ### LIKE
 
-- Apporte de la flexibilité (moins de précision) dans sa condition, idéal pour les caractères comportants dans accents, des espaces ou des tirets optionnels qui peuvent être exclus du résultat final à cause de ses caractères qui désigne la même chose mais avec un orthographe différent par exemple "événement et èvénement", "Sao Paulo et São Paulo", "0612345678 06-12-34-56-78 +33612345678"
+- Apporte de la souplesse (moins de précision) dans sa condition, idéal pour les caractères comportants dans accents, des espaces ou des tirets qui peuvent être oubliés dans lors de la saisie et donc peuvent être exclus du résultat final alors qu'ils désignent la même chose mais avec un orthographe différent par exemple "événement et èvénement", "Sao Paulo et São Paulo", "0612345678 06-12-34-56-78 +33612345678"
 
 ```sql
 SELECT *
@@ -82,5 +83,5 @@ WHERE ville LIKE 's_o Paulo'
 SELECT *
 FROM clients
 WHERE ville LIKE "%pau%"
--- Beaucoup moins précis ici par exemple saint-paul match et Pau également
+-- Beaucoup moins précis ici par exemple saint-paul match et Pau et toutes les villes contenant pau seront également dans les résultats donc à doser selon le niveau de précision que l'on souhaite avoir ou ne pas avoir
 ``` 
