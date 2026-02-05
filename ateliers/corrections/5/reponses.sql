@@ -3,7 +3,7 @@
 SELECT NOM_PRODUIT
 FROM PRODUITS
 WHERE UNITES_STOCK < (
-	SELECT AVG( UNITES_STOCK)
+	SELECT AVG(UNITES_STOCK)
 	FROM PRODUITS
 );
 --- 2. Affichez toutes les commandes pour lesquelles
